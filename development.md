@@ -25,10 +25,12 @@ When triggered by GitHub actions, follow these directives. Do NOT do the followi
 
 - NEVER make formatting changes unrelated to the current task in a file you're working on, even if you encounter spaces vs. tabs, style guide violations, and other best practice issues. Suggest reformatting follow-up work, which MUST be done in isolated commits/PRs outside of the current unit of work.
 - NEVER touch blocks of code unrelated to the feature you implement. As much as possible try to minimize the number of changed lines when implementing a feature.
+- Before implementing from-scratch utilities and approaches, first deeply check for other dependencies to introduce, especially if they're widely used or a best-practice within the given stack. Avoid reinventing any wheels.
 - Before implementing workarounds for possible bugs or shortcomings in dependencies/libraries, first deeply check for existing bug reports and fixes in the upstream changelogs. Emphasize version upgrades over workarounds whenever possible.
 
 ## Code Style, Design Patterns, Other Guidance
 
+- Even though agents will often be creating code, ALWAYS emphasize human readability and maintainability. Humans always ultimately own the code and will manually work on it alongside agents. Emphasize clarity instead of being clever or overly concise. Verbosity is preferred if it is more clear, self-documenting, and easily understood by a human developer.
 - Narrowly scope the layers within this architecture. Ex: a file containing client code for integration with an external service should not also make database updates, instead isolating that to the view that called the client methods.
 - Do NOT leave pointless code comments when the code itself is self-explanatory and self-documenting. When necessary, add a small, to the point, comment to explain *what* the block does and *why*. Use examples when possible.
 - When writing something intended for human consumption, (comment, commit message, reply to prompt) use as few words as possible. Pick every word meticulously to reduce the volume to a strict minimum. Be down to the point. Less is more.
