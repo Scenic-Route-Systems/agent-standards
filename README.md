@@ -76,6 +76,11 @@ For Claude Code within a specific project, instead commit a `.claude/settings.js
           {
             "type": "command",
             "timeout": 15,
+            "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/languages/html-css-js.md || echo 'WARNING: shared standard languages/html-css-js.md could not be fetched. Tell the user before starting work.'"
+          },
+          {
+            "type": "command",
+            "timeout": 15,
             "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/languages/python.md || echo 'WARNING: shared standard languages/python.md could not be fetched. Tell the user before starting work.'"
           },
           {
