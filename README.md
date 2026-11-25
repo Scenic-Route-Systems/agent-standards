@@ -124,3 +124,50 @@ For Claude Code within a specific project, instead commit a `.claude/settings.js
   }
 }
 ```
+
+### Python + Django + Bootstrap:
+
+```json
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/general.md || echo 'WARNING: shared standard general.md could not be fetched. Tell the user before starting work.'"
+          },
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/development.md || echo 'WARNING: shared standard development.md could not be fetched. Tell the user before starting work.'"
+          },
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/languages/html-css-js.md || echo 'WARNING: shared standard languages/html-css-js.md could not be fetched. Tell the user before starting work.'"
+          },
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/languages/python.md || echo 'WARNING: shared standard languages/python.md could not be fetched. Tell the user before starting work.'"
+          },
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/frameworks/bootstrap.md || echo 'WARNING: shared standard frameworks/bootstrap.md could not be fetched. Tell the user before starting work.'"
+          },
+          {
+            "type": "command",
+            "timeout": 15,
+            "command": "curl -fsSL --max-time 10 https://raw.githubusercontent.com/Scenic-Route-Systems/agent-standards/main/frameworks/django.md || echo 'WARNING: shared standard frameworks/django.md could not be fetched. Tell the user before starting work.'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
