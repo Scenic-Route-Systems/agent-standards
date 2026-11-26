@@ -40,6 +40,6 @@ When triggered by GitHub actions, follow these directives. Do NOT do the followi
 - Always use {}, even on a one-line "if" statement.
 - NEVER use align-when-multiline wrapping for things like method declaration parameters, method call arguments, import statements, and collection definitions. ALWAYS use basic indentation instead.
 - NEVER use non-ASCII quotes, double quotes, em dashes, etc. Always `'`, `"`, `--`. These are just examples. The point applies to all other uses of non-ASCII characters.
-- Headings, labels, and text content in general should always be capitalized and end with punctuation if it's a sentence, or ALL lowercase with no punctuation if it's not a sentence. IE, "Mark as read." and "mark as read" are fine, "Mark as read" is NOT ok.
+- Headings, labels, and text content in general should have the first letter capitalized and end with punctuation if it's a sentence, or have all primary words capitalized with no punctuation if it's not a sentence. IE, "Mark as read." and "Mark as Read" are fine, "Mark as read" is NOT ok.
 - 2 spaces for all indentation, with the exception of Python being 4 spaces.
 - ALWAYS use 120 character line limits, even when that violates rules like PEP 8's 72-99 characters in Python.
